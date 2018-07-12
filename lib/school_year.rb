@@ -1,3 +1,5 @@
+require 'date'
+
 class SchoolYear
 class << self
 
@@ -9,19 +11,23 @@ class << self
     year + 12 - standard_graduation_year
   end
 
+  def academic_year(date)
+    date.year + (date.month < 7 ? 0 : 1)
+  end
+
   def default_first_day_of_school(academic_year_or_date)
     if academic_year_or_date.class == Integer
-      "#{academic_year_or_date - 1}-09-01".to_date
+      Date.new(academic_year_or_date - 1, 9, 1)
     elsif academic_year_or_date.class == Date
-      "#{academic_year_or_date.year - (academic_year_or_date.month < 7 ? 1 : 0)}-09-01".to_date
+      Date.new(academic_year_or_date.year - (academic_year_or_date.month < 7 ? 1 : 0), 9, 1)
     end
   end
 
   def default_last_day_of_school(academic_year_or_date)
     if academic_year_or_date.class == Integer
-      "#{academic_year_or_date}-06-15".to_date
+      Date.new(academic_year_or_date, 6, 15)
     elsif academic_year_or_date.class == Date
-      "#{academic_year_or_date.year + (academic_year_or_date.month < 7 ? 0 : 1)}-06-15".to_date
+      Date.new(academic_year_or_date.year + (academic_year_or_date.month < 7 ? 0 : 1), 6, 15)
     end
   end
 
