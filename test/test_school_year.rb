@@ -16,6 +16,11 @@ class SchoolYearTest < MiniTest::Test
     assert_equal SchoolYear.academic_year(Date.new(2015,01,11)), 2015
   end
 
+  def test_grade_on_date
+    assert_equal SchoolYear.grade_on_date(Date.new(2014,11,11), 2020), 7
+    assert_equal SchoolYear.grade_on_date(Date.new(2015,1,11), 2020), 7
+  end
+
   def test_default_first_day_of_school
     assert_equal SchoolYear.default_first_day_of_school(Date.new(2014,11,11)), Date.new(2014,9,01)
     assert_equal SchoolYear.default_first_day_of_school(Date.new(2015,01,11)), Date.new(2014,9,01)

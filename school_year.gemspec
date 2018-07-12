@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'school_year'
-  s.version     = '0.0.1'
+  s.version     = '0.1.0'
   s.date        = '2018-07-12'
   s.summary     = "School Year Logic"
   s.description = "

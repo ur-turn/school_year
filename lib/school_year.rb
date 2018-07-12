@@ -15,6 +15,10 @@ class << self
     date.year + (date.month < 7 ? 0 : 1)
   end
 
+  def grade_on_date(date, standard_graduation_year)
+    year_to_grade(academic_year(date), standard_graduation_year)
+  end
+
   def default_first_day_of_school(academic_year_or_date)
     if academic_year_or_date.class == Integer
       Date.new(academic_year_or_date - 1, 9, 1)
