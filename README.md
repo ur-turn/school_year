@@ -2,6 +2,8 @@
 Simple logic for translating between academic year and grade for a student
 
 ## Sample Usage
+`SchoolYear.grade_to_graduation_year(grade, academic_year)` determines the graduation year for a student based on their grade and the academic year
+
 `SchoolYear.grade_to_year(grade, graduation_year)` determines the calendar year from the student's grade based on the graduation year
 
 `SchoolYear.year_to_grade(year, graduation_year)` determines the student's grade from the calendar year based on the graduation year

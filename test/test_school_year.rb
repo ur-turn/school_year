@@ -3,6 +3,11 @@ require 'school_year'
 require 'date'
 
 class SchoolYearTest < MiniTest::Test
+
+  def test_grade_to_graduation_year
+    assert_equal SchoolYear.grade_to_graduation_year(10, 2021), 2023
+  end
+
   def test_grade_to_year
     assert_equal SchoolYear.grade_to_year(11, 2015), 2014
   end

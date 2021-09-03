@@ -3,6 +3,11 @@ require 'date'
 class SchoolYear
 class << self
 
+  def grade_to_graduation_year(grade, academic_year=academic_year(Date.today))
+    return nil unless (0..12).include? grade
+    academic_year + (12 - grade)
+  end
+
   def grade_to_year(grade, standard_graduation_year)
     standard_graduation_year - 12 + grade
   end

@@ -1,13 +1,14 @@
 Gem::Specification.new do |s|
   s.name        = 'school_year'
-  s.version     = '0.1.0'
-  s.date        = '2018-07-12'
+  s.version     = '0.2.0'
+  s.date        = '2021-09-02'
   s.summary     = "School Year Logic"
   s.description = "
     # School Year
     Simple logic for translating between academic year and grade for a student
 
     ## Sample Usage
+    `SchoolYear.grade_to_graduation_year(grade, academic_year)` determines the graduation year for a student based on their grade and the academic year\
     `SchoolYear.grade_to_year(grade, graduation_year)` determines the calendar year from the student's grade based on the graduation year
     `SchoolYear.year_to_grade(year, graduation_year)` determines the student's grade from the calendar year based on the graduation year
     `SchoolYear.default_first_day_of_school(academic_year_or_date)` determines the first day of school (as September 1st) based on an integer representing the academic year (e.g., 1998), or a date (e.g., '1998-04-04'.to_date)
